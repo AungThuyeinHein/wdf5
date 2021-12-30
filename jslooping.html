@@ -317,14 +317,122 @@
 			}while(l < colors.length);
 
 
-
+			document.write("<hr/>");
 
 
 			// 6.forEach Loop
+			// mainarrays.forEach(function(value,index,array){
+			// 	code to be executed;
+			// });
 
+			document.write("<h3>forEach Loop</h3>");
+
+			let arrcolorones = ["red","green","black","grey","blue","pink"];
+
+			arrcolorones.forEach(function(arrcolorone){
+				console.log(arrcolorone);
+			});
+
+			arrcolorones.forEach(function(arrcolorone,idx){
+				document.write("Index key is = " + idx + " Color is = "+ arrcolorone + "<br/>");
+			});
+
+			arrcolorones.forEach(function(arrcolorone,idx,arr){
+				console.log("Index key is = " + idx + " Color is = "+ arrcolorone );
+				console.log(arr);
+			});
+
+
+			document.write("<hr/>");
 
 
 			// 7. Map
+			document.write("<h3>Map</h3>");
+
+			const visitors = ["paing sis","m zaw naw","june","htet aung kyaw"];
+
+			visitors.forEach(function(name){
+				console.log(`forEach result = Mr.${name}`);
+			});
+
+			visitors.map(function(name){
+				console.log(`map result = Mr.${name}`);
+			});
+
+
+
+			const guys = visitors.map(function(name){
+				return `Mr.${name}`;
+			});
+
+			console.log(guys);
+			console.log(typeof guys); //(object) array 
+
+			const myguys = visitors.forEach(function(name){
+				return `Mr.${name}`;
+			});
+			console.log(myguys); //result = undefined
+
+
+			const users = [
+			{id:1, name:"Aung Aung"},
+			{id:2, name:"Su Su"},
+			{id:3, name:"Mya Mya"}
+			];
+			// console.log(users);
+
+			const getname = users.map(function(user){
+				return user.name;
+			});
+			console.log(getname);
+
+			const printname = users.map(user=>user.name);
+			console.log(printname);
+
+
+			users.map((user,idx)=>{
+				document.write(`Index is ${idx} = Id is ${user.id} and name is ${user.name}`+"<br/>");
+			});
+
+
+
+			const game = "Chess";
+			const winners = ["Mr.Tin","Mr.June","Ms.July"];
+
+			const getresult = winners.map((winner,idx)=>({name:winner,sport:game,prize:idx+1}));
+
+			console.log(getresult);
+
+
+			
+
+
+			// 8.Filter
+
+			const ages = [20,25,17,35,21,16,14,40,36,18,32,52,12];
+			console.log(ages);
+
+			// const getov18 = ages.filter(age=>{
+			// 	return age>18;
+			// });
+
+			const getov18 = ages.filter(age=> age >= 18);
+
+			console.log(getov18);
+			console.log(typeof getov18);
+
+
+// 30FE
+
+
+
+
+
+
+
+
+			
+
 
 
 
