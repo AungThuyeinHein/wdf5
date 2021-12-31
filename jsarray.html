@@ -169,7 +169,63 @@
 
 			// Just reverse ( sort() doesn't work in number )
 			const arr5 = [700,200,100,50,150,10,600];
-			console.log(arr5.reverse());
+
+			// console.log(arr5.sort(function(x,y){
+			// 	return x-y;
+			// }));
+
+
+			console.log(arr5.sort((x,y)=>{
+				return y-x;
+			}));
+
+
+// ___________________________
+
+
+			const funone = function(){
+				console.log("i am fun one");
+			}
+
+			const funtwo = function(){
+				console.log("i am fun two");
+			}
+
+			const funthree = function(){
+				console.log("i am fun three");
+			}
+
+			let arrfuns = [];
+
+			arrfuns.push(funone);
+			arrfuns.push(funtwo);
+			arrfuns.push(funthree);
+			arrfuns.push(funone);
+
+
+			console.log(arrfuns);
+
+
+			const output = arrfuns.filter(function(arrfun){
+				// console.log(arrfun);
+
+				// if(arrfun === funtwo){
+				// 	return arrfun;
+				// }
+
+				if(arrfun !== funtwo){
+					return arrfun;
+			}
+
+			});
+
+			console.log(output);
+			
+
+
+
+
+
 
 
 
