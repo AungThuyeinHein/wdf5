@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Block Scope and Function Scope</title>
+	</head>
+	<body>
+
+		<script type="text/javascript">
+
+
+			// const name = "aung aung";
+			// 	name = "aung aung";
+			// const name = "kyaw kyaw";
+			// console.log(name);
+
+			// let name = "su su";
+			// 	name = "aye aye";
+			// let name = "chan chan";
+			// console.log(name);
+
+			// var name = "zaw zaw";
+			// 	name = "maw maw";
+			// var name = "thaw thaw";
+			// var name = "tar tar";
+			// console.log(name);
+			
+// --------------------------------------------------------------------------------------
+
+			var a = 1;
+			let b = 2;
+			const c = 3;
+
+			console.log("Global Scope :  = ",a,b,c);
+
+			function myfunone(){
+				return a+b+c;
+			}
+
+			console.log("Using Global Scope variables in function = " , myfunone()); //result = 6
+
+
+			function myfuntwo(){
+				a = 10;
+				b = 20;
+				// c = 30; // can't overwrite cuz const
+
+				console.log("Overwrite / Global Scope variables in function = " , a,b,c);
+			}
+
+			myfuntwo();
+			console.log("Global Scope : ",a,b,c);  //result = 10 20 3 ( value changed )
+
+
+
+			var x = 1;
+			let y = 2;
+			const z = 3;
+
+			function myfunthree(){
+
+				var x = 4;
+				let y = 5;
+				const z = 6;
+
+				console.log("Overwrite / Global Scope variables in function by var,let,const = " , x,y,z);
+
+
+
+				var h = 100;
+				let i = 200;
+				const j = 300;
+
+				console.log("h,i,j variables in function =  ", h,i,j);
+			}
+
+			myfunthree();
+			console.log("Global Scope : ",x,y,z);  //result = 1,2,3
+			console.log("h,i,j variables in function =  ", h,i,j); // h,i,j is not defined
+
+// --------------------------------------------------------------------------------------
+
+
+
+
+		</script>
+	</body>
+</html>
